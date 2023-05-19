@@ -40,8 +40,9 @@ def get_recommendation(title, cosine_sim_matrix, df, num_of_rec=10):
     selected_course_scores = [i[1] for i in sim_scores[0:num_of_rec+1]]
     result_df = df.iloc[selected_course_indices]
     result_df['similarity_score'] = selected_course_scores
-    final_recommended_course = result_df[['course_title', 'similarity_score', 'url', 'price', 'num_subscribers']]
+    final_recommended_course = result_df[['course_title', 'similarity_score', 'url', 'price', 'duration']]
     return final_recommended_course
+
 #Function
 RESULT_TEMP = """
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,11 +57,10 @@ box-shadow:0 0 4px 2px #ccc; background-image: linear-gradient(to bottom, #538FF
 
 
 <p style="color:black;"><span style="color:black;font-weight:bold">💲Price:</span>{}</p>
-<p style="color:black"><span style="color:black;font-weight:bold">🧑‍🎓👨🏽‍🎓 Students:</span>{}</p>
+<p style="color:black"><span style="color:black;font-weight:bold">⌚ Duration:</span>{}</p>
 
 </div>
 """
-
 #Search for Course  #a8f0c6    #6c6c6c
 @st.cache_data
 def search_term_if_not_found(term,df):
@@ -74,7 +74,7 @@ def main():
 menu = ["Home","Recommend","About"]
 choice = st.sidebar.selectbox("Menu",menu)
 
-df = load_data(r"data\Udemy_final.csv")
+df = load_data(r"C:\Users\raksh\Desktop\ashray\Course-Recommendation-And-Sentiment-Analysis\data\final_data.csv")
 
 if choice == "Home":
         st.subheader("Home")
@@ -86,7 +86,7 @@ elif choice == "Recommend":
 
     
         search_term  = st.selectbox('Search!!',df['course_title'].values)
-        num_of_rec = st.sidebar.number_input("Number",4,25,6)
+        num_of_rec = st.sidebar.number_input("Number of Recomendations",4,100,5)
         if st.button("Recommend"):
             if search_term is not None:
                 try:
@@ -99,12 +99,10 @@ elif choice == "Recommend":
                         rec_score = row[1][1]
                         rec_url = row[1][2]
                         rec_price = row[1][3]
-                        
-
+                        rec_duration = row[1][4]
                         #st.write("Title",rec_title,)
-                        stc.html(RESULT_TEMP.format(rec_title,rec_score,rec_url,rec_price),height=350)
-
-
+                        
+                        stc.html(RESULT_TEMP.format(rec_title,rec_score,rec_url,rec_price, rec_duration),height=350)
                 except:
                     results = "Not Found"
                     st.warning(results)
@@ -112,12 +110,10 @@ elif choice == "Recommend":
                     result_df = search_term_if_not_found(search_term,df)
                     st.dataframe(result_df)
                     
-
 else:
         st.subheader("About")
         st.text("Built with Streamlit")
         
-	
 
 if __name__ == '_main_':
 	main()
