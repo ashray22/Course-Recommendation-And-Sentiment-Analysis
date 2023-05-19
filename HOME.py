@@ -47,18 +47,18 @@ st.image('logo/logo_00432.png', width=705)
 st.subheader("Natural Language Processing On the Go..")
 st.markdown("""
 	#### Description
-	+ This is a Natural Language Processing(NLP) Based App useful for basic NLP task Tokenization, NER, Sentiment and Summarization.
+	+ This is a Natural Language Processing(NLP) Based App useful for basic NLP task Sentiment Analysis, Tokenization, NER, Summarization And Course Recommendation.
 
 	""")
 
 from PIL import Image,ImageFilter,ImageEnhance
 
 if st.checkbox("Model Architecture"):
-    st.image('arch.png')
-
+    #st.image('arch.png')
+    st.image('logo/model_archi (3).png')
 st.sidebar.subheader("By")
 st.sidebar.text("Ashray Raina - 19bcs021")
-st.sidebar.text("Sushant Baarna - 19bcs079")
+#st.sidebar.text("Sushant Baarna - 19bcs079")
 
 
 

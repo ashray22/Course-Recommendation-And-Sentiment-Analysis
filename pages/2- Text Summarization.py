@@ -116,7 +116,7 @@ if st.button("Summarize"):
         
 st.sidebar.subheader("By")
 st.sidebar.text("Ashray Raina - 19bcs021")
-st.sidebar.text("Sushant Baarna - 19bcs079")
+#st.sidebar.text("Sushant Baarna - 19bcs079")
 # Function to Analyse Tokens and Lemma
 # Core Pkgs
 # import streamlit as st 
