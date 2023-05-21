@@ -18,5 +18,5 @@ sentiment, and deployed the platform as a user-friendly web app using the Stream
 
 <h1 align="center">Contributors</h1>
 
-- [Rakshit Khajuria](https://github.com/Ryzxxl)
-- [Prikshit Sharma](https://github.com/Prikshit7766)
+- [Ashray Raina](https://github.com/ashray22)
+- [Sushant Barna](https://github.com/Prikshit7766)
