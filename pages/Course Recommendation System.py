@@ -74,7 +74,7 @@ def main():
 menu = ["Home","Recommend","About"]
 choice = st.sidebar.selectbox("Menu",menu)
 
-df = load_data(r"C:\Users\Ashray\Downloads\NLPify-main\NLPify-main\data\final_data.csv")
+df = load_data(r"data/final_data.csv")
 
 if choice == "Home":
         st.subheader("Home")
