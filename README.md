@@ -1,8 +1,7 @@
 # NLPify
 
-deployment
-
-https://prikshit7766-nlpify-home-yxrra3.streamlit.app/
+## Deployment
+[Dempolyment Link](https://ashray22-course-recommendation-and-sentiment-analys-home-dy4vxs.streamlit.app/)
 
 
 
@@ -19,4 +18,4 @@ sentiment, and deployed the platform as a user-friendly web app using the Stream
 <h1 align="center">Contributors</h1>
 
 - [Ashray Raina](https://github.com/ashray22)
-- [Sushant Barna](https://github.com/Prikshit7766)
+- [Sushant Barna](https://github.com/SushantBaarna)
